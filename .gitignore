@@ -1,0 +1,34 @@
+# Local credentials and runtime state
+.Baleen/
+.baleen/
+.mewcode/
+.env
+.env.*
+!.env.example
+*.local.yaml
+*.local.yml
+*.pem
+*.key
+
+# Python environments, caches, build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Editor/system files and generated previews
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+*.log
+*-preview.png
+docs/superpowers/

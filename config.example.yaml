@@ -1,0 +1,12 @@
+# Copy to .Baleen/config.yaml, then replace YOUR_MODEL_ID.
+# Anthropic-compatible services also require their own base_url.
+# Set ANTHROPIC_API_KEY in the environment. Never commit a real key.
+providers:
+  - name: my-anthropic
+    protocol: anthropic
+    base_url: https://api.anthropic.com
+    model: YOUR_MODEL_ID
+    thinking: false
+    max_output_tokens: 4096
+
+permission_mode: default
