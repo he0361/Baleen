@@ -1,18 +1,4 @@
-```
-       █   █
-        █ █
-         █
-
-      █████████
-    █████████████
-   ███████████████
-   ███████████████   █ █
-   ███████████████   ███
-   ███████████████████
-    ████████████████
-     ████████████
-       ████████
-```
+![Baleen 蓝色像素鲸鱼与白色标题](docs/assets/banner.svg)
 
 # Baleen
 
@@ -106,7 +92,7 @@ set "ANTHROPIC_API_KEY=YOUR_API_KEY"
 start.cmd
 ```
 
-`set` 只对当前窗口生效。希望保存为系统级用户环境变量时：
+`set` 只对当前窗口生效。希望保存为当前用户的持久环境变量时：
 
 ```cmd
 setx ANTHROPIC_API_KEY "YOUR_API_KEY"
@@ -149,11 +135,11 @@ E:\Baleen\.venv\Scripts\python.exe -P -m Baleen
 2. 项目级：`.Baleen/config.yaml`
 3. 本地覆盖：`.Baleen/config.local.yaml`
 
-合并规则：`providers` 按条目覆盖，`mcp_servers` 按名称合并，`hooks` 追加。没有任何配置文件时启动会报错。`config.example.yaml` 为不含密钥的参考示例。
+合并规则：后加载配置中的 `providers` 列表整体替换先前列表，`mcp_servers` 按名称合并，`hooks` 追加。没有任何配置文件时启动会报错。`config.example.yaml` 为不含密钥的参考示例。
 
 | 配置键 | 说明 |
 | --- | --- |
-| `providers[]` | 模型提供方列表。字段：`name`、`protocol`（`anthropic` / `openai` / `openai-compat`）、`base_url`（省略用官方默认）、`model`、`api_key`（省略时读环境变量）、`thinking`、`max_output_tokens`、`context_window`（可选） |
+| `providers[]` | 模型提供方列表。必填字段：`name`、`protocol`（`anthropic` / `openai` / `openai-compat`）、`base_url`、`model`；可选字段：`api_key`（省略时读环境变量）、`thinking`、`max_output_tokens`、`context_window` |
 | `permission_mode` | `default` / `acceptEdits` / `plan` / `bypassPermissions` / `custom` / `dontAsk` |
 | `mcp_servers[]` | MCP 服务器：stdio（`command`+`args`+`env`）或 Streamable HTTP（`url`+`headers`）；env/headers 支持 `${ENV_VAR}` 插值 |
 | `hooks[]` | 生命周期钩子配置 |
@@ -166,6 +152,8 @@ E:\Baleen\.venv\Scripts\python.exe -P -m Baleen
 环境变量：`ANTHROPIC_API_KEY`（anthropic）、`OPENAI_API_KEY`（openai / openai-compat）。
 
 ## 常用操作
+
+详细说明：[模型与 API Key 配置](docs/configuration.md) · [启动、中文输入与图标显示排错](docs/troubleshooting.md)。
 
 | 操作 | 用法 |
 | --- | --- |
