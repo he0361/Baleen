@@ -210,4 +210,4 @@ set "PYTHONPATH=%CD%\.."
 .venv\Scripts\python.exe -m pip check
 ```
 
-回归测试面向 Windows，覆盖：驱动对备用屏幕的处理顺序、IME 合成输入 / 修饰键 Unicode 提交、像素配色保留（半尺寸鲸鱼不丢像素）、缺少 API Key 时的标题显示，以及中文输入 / 粘贴 / 提交等场景。代码含非 Windows 驱动分支（回退 `LinuxDriver`），但其它平台的同等验证尚未完成，`start.cmd` 与当前测试集均面向 Windows。
+回归测试面向Windows，覆盖：驱动对备用屏幕的处理顺序、IME 合成输入/修饰键 Unicode 提交、（半尺寸鲸鱼）、缺少API Key时的标题显示，以及中文输入/粘贴 / 提交等场景。代码含非Windows驱动分支（回退 `LinuxDriver`），但其它平台的同等验证尚未完成，`start.cmd` 与当前测试集均面向Windows。
