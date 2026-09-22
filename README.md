@@ -211,18 +211,3 @@ set "PYTHONPATH=%CD%\.."
 ```
 
 回归测试面向 Windows，覆盖：驱动对备用屏幕的处理顺序、IME 合成输入 / 修饰键 Unicode 提交、像素配色保留（半尺寸鲸鱼不丢像素）、缺少 API Key 时的标题显示，以及中文输入 / 粘贴 / 提交等场景。代码含非 Windows 驱动分支（回退 `LinuxDriver`），但其它平台的同等验证尚未完成，`start.cmd` 与当前测试集均面向 Windows。
-
-## 来源与许可
-
-本仓库绝大多数源文件开头保留如下署名注释：
-
-```
-# 来源：公众号@小林coding
-# 后端八股网站：xiaolincoding.com
-# Agent网站：xiaolinnote.com
-# 简历模版：jianli.xiaolinnote.com
-```
-
-这是在**保留上游来源署名的基础上**进行的个人定制版本；定制内容主要包括品牌（`Baleen` 名称与蓝色像素鲸鱼标识）、Windows 启动脚本（`start.cmd`）、中文输入兼容与控制台显示修复。`.gitignore` 中遗留的 `.mewcode/` 等条目保留了上游项目早期的目录命名痕迹。
-
-仓库内未附带 `LICENSE` 文件，本仓库也不额外声明 MIT、Apache 等开源授权。复用或分发前，请先确认上游的授权范围；第三方依赖（`anthropic`、`openai`、`textual`、`rich`、`httpx`、`mcp` 等）遵循各自的许可证。
